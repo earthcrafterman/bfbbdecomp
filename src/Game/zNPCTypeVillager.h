@@ -88,6 +88,7 @@ struct zNPCNewsFish : zNPCVillager
     float32 screenLerp;
 
     zNPCNewsFish(int32 myType);
+    void SelfSetup();
 };
 
 struct zNPCNewsFishTV : zNPCVillager
@@ -95,6 +96,12 @@ struct zNPCNewsFishTV : zNPCVillager
     zNPCNewsFishTV(int32 myType);
 };
 
+xAnimTable* ZNPC_AnimTable_Villager(xAnimTable* table);
+xAnimTable* ZNPC_AnimTable_BalloonBoy(xAnimTable* table);
+xAnimTable* ZNPC_AnimTable_SuperFriend(xAnimTable* table);
+void zNPCBubbleBuddy_AlphaUpdate(float32 dt);
+void FOLK_InitEffects();
+void FOLK_KillEffects();
 void ZNPC_Villager_Startup();
 void ZNPC_Villager_Shutdown();
 xFactoryInst* ZNPC_Create_Villager(int32 who, RyzMemGrow* growCtxt, void*);
